@@ -1,0 +1,27 @@
+server:
+  port: 8000
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/serverdb"
+    username: diego
+    password: asdf
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialiect: org.hibernate.dialect.PostgreSQL95Dialect
+        format_sql: false
+    show-sql: false
+
+  jackson:
+    default-property-inclusion:
+    - non_null
+    - non_absent
+    serialization:
+      write-dates-as-timestamps: true
